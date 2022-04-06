@@ -14,6 +14,6 @@ steps:
   inputs:
     rootFolderOrFile: '$(build.sourcesdirectory)'
     includeRootFolder: true
-    archiveType: 'zip'
+    archiveType: '7z'
     archiveFile: '$(Build.ArtifactStagingDirectory)/bootcamp.zip'
     replaceExistingArchive: true
