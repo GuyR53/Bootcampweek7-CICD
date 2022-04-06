@@ -23,7 +23,6 @@ steps:
     command: 'publish'
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
     feedsToUsePublish: 'internal'
-    vstsFeedPublish: '4fe37221-8e88-4579-9362-825112c35ac6'
+    vstsFeedPublish: '40a8d693-43e7-4d3c-b58e-d3cae2291e12/8fb93940-a502-4cf8-802c-4f057f7fd12a'
     vstsFeedPackagePublish: 'bootcamp-app'
     versionOption: 'patch'
-    packagePublishDescription: 'Artifact'
