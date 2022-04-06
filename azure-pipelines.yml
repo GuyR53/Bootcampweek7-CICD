@@ -26,3 +26,4 @@ steps:
     vstsFeedPublish: '4fe37221-8e88-4579-9362-825112c35ac6'
     vstsFeedPackagePublish: 'bootcamp-app'
     versionOption: 'patch'
+    packagePublishDescription: 'Artifact'
