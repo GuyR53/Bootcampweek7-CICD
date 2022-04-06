@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  name: BootcampWeek7
 
 steps:
 - task: ArchiveFiles@2
