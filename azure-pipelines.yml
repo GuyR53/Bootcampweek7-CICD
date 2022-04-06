@@ -17,3 +17,12 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/bootcamp.zip'
     replaceExistingArchive: true
+
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: '4fe37221-8e88-4579-9362-825112c35ac6'
+    vstsFeedPackagePublish: 'my-artifact'
+    versionOption: 'patch'
