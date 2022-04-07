@@ -42,6 +42,8 @@ stages:
         vstsFeedPackagePublish: 'bootcamp-app'
         versionOption: 'patch'
       displayName: "Move to artifact directory in dev.azure"
+    
+
 
 - stage: 'Staging' #Stage name cannot have spaces
   displayName: 'Staging' #Name displayed when viewing in Azure DevOps
@@ -60,7 +62,7 @@ stages:
             inputs:
               buildType: 'current'
               downloadType: 'single'
-              artifactName: 'bootcamp-app'
+              artifactName: 'bootcamp-app.zip'
               downloadPath: '$(System.ArtifactsDirectory)'
           - task: ExtractFiles@1
             displayName: 'Extract files'
