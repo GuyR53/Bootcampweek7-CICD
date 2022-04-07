@@ -19,7 +19,7 @@ steps:
   inputs:
     command: 'custom'
     workingDir: '$(build.sourcesdirectory)'
-    customCommand: 'test'
+    customCommand: 'test --if-present'
 
 - task: ArchiveFiles@2
   inputs:
