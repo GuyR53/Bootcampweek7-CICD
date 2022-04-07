@@ -5,7 +5,7 @@
 trigger:
 - master
 pool:
-  name: BootcampWeek7
+  name: ProjectPool
 steps:
 - task: ArchiveFiles@2
   inputs:
