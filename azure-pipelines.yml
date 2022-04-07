@@ -30,7 +30,7 @@ stages:
         rootFolderOrFile: '$(build.sourcesdirectory)'
         includeRootFolder: true
         archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/bootcamp.zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/bootcamp-app.zip'
         replaceExistingArchive: true
       displayName: "Creating zip file and moving to agent's Artifact directory from source"
     - task: UniversalPackages@0
@@ -73,7 +73,7 @@ stages:
           - task: ExtractFiles@1
             displayName: 'Extract files'
             inputs:
-              archiveFilePatterns: "$(Pipeline.Workspace)/app/application.zip"
+              archiveFilePatterns: "$(Pipeline.Workspace)/bootcamp-app.zip"
               destinationFolder: "$(Pipeline.Workspace)/files"
 
   
