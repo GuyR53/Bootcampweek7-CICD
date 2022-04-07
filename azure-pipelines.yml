@@ -36,10 +36,11 @@ stages:
 
       
     - task: PublishBuildArtifacts@1
-      displayName: 'Publish Artifact'
       inputs:
         pathtoPublish: '$(Build.ArtifactStagingDirectory)/bootcamp.zip' 
         artifactName: 'bootcamp-app'
+      displayName: 'Publish Artifact'
+      
     
 
 
@@ -68,4 +69,3 @@ stages:
               archiveFilePatterns: "$(Pipeline.Workspace)/bootcamp-app/bootcamp.zip"
               destinationFolder: "$(Pipeline.Workspace)/files/"
 
-  
