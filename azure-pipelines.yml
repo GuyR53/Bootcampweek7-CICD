@@ -42,4 +42,26 @@ stages:
         vstsFeedPackagePublish: 'bootcamp-app'
         versionOption: 'patch'
       displayName: "Move to artifact directory in dev.azure"
-- stage: Deploy to Staging
+
+- stage: 'Staging' #Stage name cannot have spaces
+  displayName: 'Staging' #Name displayed when viewing in Azure DevOps
+  dependsOn: ['Build_Stage'] #List of previous stages that must complete before this stage runs
+  jobs:
+  - deployment: Deploy_Staging #No spaces
+    displayName: Staging Deployment #Name displayed in UI
+    pool:
+      name: ProjectPool 
+    environment: Staging
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - download: current
+            artifact: 'bootcamp-app'
+          - task: ExtractFiles@1
+            displayName: 'Extract files'
+            inputs:
+              archiveFilePatterns: "$(Pipeline.Workspace)/app/application.zip"
+              destinationFolder: "$(Pipeline.Workspace)/files"
+
+  
