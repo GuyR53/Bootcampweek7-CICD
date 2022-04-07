@@ -74,6 +74,6 @@ stages:
             displayName: 'Extract files'
             inputs:
               archiveFilePatterns: "$(Pipeline.Workspace)/bootcamp-app/bootcamp.zip"
-              destinationFolder: "$(Pipeline.Workspace)/files"
+              destinationFolder: "$(Pipeline.Workspace)/files/"
 
   
