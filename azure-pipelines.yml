@@ -42,3 +42,4 @@ stages:
         vstsFeedPackagePublish: 'bootcamp-app'
         versionOption: 'patch'
       displayName: "Move to artifact directory in dev.azure"
+- stage: Deploy to Staging
