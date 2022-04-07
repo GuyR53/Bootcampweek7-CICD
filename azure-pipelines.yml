@@ -73,7 +73,7 @@ stages:
           - task: ExtractFiles@1
             displayName: 'Extract files'
             inputs:
-              archiveFilePatterns: "$(Pipeline.Workspace)/bootcamp.zip"
+              archiveFilePatterns: "$(Pipeline.Workspace)/bootcamp-app/bootcamp.zip"
               destinationFolder: "$(Pipeline.Workspace)/files"
 
   
