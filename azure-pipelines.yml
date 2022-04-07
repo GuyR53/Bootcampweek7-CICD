@@ -15,11 +15,6 @@ steps:
     command: 'install'
     workingDir: '$(build.sourcesdirectory)'
 
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    workingDir: '$(build.sourcesdirectory)'
-    customCommand: 'test --if-present'
 
 - task: ArchiveFiles@2
   inputs:
