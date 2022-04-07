@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+trigger:
+- master
+pool:
+  name: BootcampWeek7
+steps:
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(build.sourcesdirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/bootcamp.zip'
+    replaceExistingArchive: true
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: '40a8d693-43e7-4d3c-b58e-d3cae2291e12/8fb93940-a502-4cf8-802c-4f057f7fd12a'
+    vstsFeedPackagePublish: 'bootcamp-app'
+    versionOption: 'patch'
