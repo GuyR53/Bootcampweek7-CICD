@@ -41,7 +41,6 @@ stages:
       inputs:
         pathtoPublish: '$(Build.ArtifactStagingDirectory)/bootcamp.zip' 
         artifactName: 'bootcamp-app'
-        publishLocation: BuildArtifacts
       displayName: 'Publish Artifact'
       
     
