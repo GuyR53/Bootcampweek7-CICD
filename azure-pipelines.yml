@@ -4,8 +4,6 @@
 # https://aka.ms/yaml
 trigger:
 - master
-variables:
-- group: Variables
 stages:
 - stage: 'Build_Stage' #Stage name cannot have spaces
   displayName: 'Build' #Name displayed when viewing in Azure DevOps
@@ -63,15 +61,10 @@ stages:
   - deployment: Deploy_Production #No spaces
     displayName: Production Deployment #Name displayed in UI
     pool:
-      name: ProjectPool #variable that was defined previously (not shown in this snippet)
+      name: ProductionPool #variable that was defined previously (not shown in this snippet)
     environment: Production
     strategy:
       runOnce:
         deploy:
           steps:  
-           - task: DownloadBuildArtifacts@0
-             inputs:
-              buildType: 'current'
-              downloadType: 'single'
-              artifactName: 'bootcamp-app'
-              downloadPath: '$(System.ArtifactsDirectory)'        
+          - template: templates/CDTemplate.yaml      
