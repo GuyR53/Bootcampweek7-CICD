@@ -6,6 +6,7 @@ trigger:
 - master
 variables:
 - group: Variables
+- group: .envStage
 stages:
 - stage: 'Build_Stage' #Stage name cannot have spaces
   displayName: 'Build' #Name displayed when viewing in Azure DevOps
