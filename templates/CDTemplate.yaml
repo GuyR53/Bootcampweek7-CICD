@@ -52,6 +52,6 @@
               ansibleInterface: 'agentMachine'
               playbookPathOnAgentMachine: '$(PlaybookPath)'
               inventoriesAgentMachine: 'file'
-              inventoryFileOnAgentMachine: '$(StageInentoryPath)'
+              inventoryFileOnAgentMachine: '$(InentoryPath)'
               args: '--extra-vars server_env_group="stageservers"'
 
