@@ -105,5 +105,27 @@ stages:
               inventoriesAgentMachine: 'file'
               inventoryFileOnAgentMachine: '$(StageInentoryPath)'
               args: '--extra-vars server_env_group="stageservers"'
+
+
           
-          
+- stage: 'Production' #Stage name cannot have spaces
+  variables:
+  - group: envProd
+  displayName: 'Production' #Name displayed when viewing in Azure DevOps
+  dependsOn: ['Build_Stage', 'Staging'] #List of previous stages that must complete before this stage runs
+  jobs:
+  - deployment: Deploy_Production #No spaces
+    displayName: Production Deployment #Name displayed in UI
+    pool:
+      name: ProjectPool #variable that was defined previously (not shown in this snippet)
+    environment: Production
+    strategy:
+      runOnce:
+        deploy:
+          steps:  
+           - task: DownloadBuildArtifacts@0
+             inputs:
+              buildType: 'current'
+              downloadType: 'single'
+              artifactName: 'bootcamp-app'
+              downloadPath: '$(System.ArtifactsDirectory)'        
