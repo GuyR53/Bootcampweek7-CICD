@@ -1,0 +1,15 @@
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(build.sourcesdirectory)'
+        includeRootFolder: true
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/bootcamp.zip'
+        replaceExistingArchive: true
+      displayName: "Creating zip file and moving to agent's Artifact directory from source"
+
+      
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: '$(Build.ArtifactStagingDirectory)/bootcamp.zip' 
+        artifactName: 'bootcamp-app'
+      displayName: 'Publish Artifact'
