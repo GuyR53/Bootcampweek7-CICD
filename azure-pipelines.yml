@@ -77,6 +77,6 @@ stages:
           - task: Ansible@0
             inputs:
               ansibleInterface: 'agentMachine'
-              playbookPathOnAgentMachine: 'main_playbook.yml'
+              playbookPathOnAgentMachine: 'AnsibleWeek6Code/main_playbook.yml'
               inventoriesAgentMachine: 'file'
-              inventoryFileOnAgentMachine: '/inventories/stage'
+              inventoryFileOnAgentMachine: 'AnsibleWeek6Code/inventories/stage'
