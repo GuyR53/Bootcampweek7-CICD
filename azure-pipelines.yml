@@ -74,11 +74,8 @@ stages:
           - task: CmdLine@2
             inputs:
               script: |
-                git clone https://github.com/GuyR53/AnsibleWeek6Code.git
-          
-          - task: CopyFiles@2
-            inputs:
-              Contents: |
+                cd ../files/s
+                cat <<EOF >.env
                 # Host configuration
                         
                           PORT=8080
@@ -102,7 +99,8 @@ stages:
                           OKTA_ORG_URL={{ OKTAURL}}
                           OKTA_CLIENT_ID= {{ OKTAID }}
                           OKTA_CLIENT_SECRET= {{ OKTASECRET  }}
-              TargetFolder: '/home/Ansible-Controler/myagent/_work/1/files/s/.env'
+                
+                EOF
           
           - task: Ansible@0
             inputs:
