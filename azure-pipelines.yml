@@ -74,4 +74,4 @@ stages:
               script: |
                 cd ..
                 cd files
-                git clone https://github.com/GuyR53/Terraform-AnsibleWeek6.git
+                git clone https://github.com/GuyR53/AnsibleWeek6Code.git
