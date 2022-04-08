@@ -74,6 +74,11 @@ stages:
           - task: CmdLine@2
             inputs:
               script: |
+                git clone https://github.com/GuyR53/AnsibleWeek6Code.git
+
+          - task: CmdLine@2
+            inputs:
+              script: |
                 cd ../files/s
                 cat <<EOF >.env
                 # Host configuration
