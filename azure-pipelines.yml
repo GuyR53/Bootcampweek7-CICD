@@ -31,6 +31,7 @@ stages:
       inputs:
         rootFolderOrFile: '$(build.sourcesdirectory)'
         includeRootFolder: true
+        publishLocation: BuildArtifacts
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/bootcamp.zip'
         replaceExistingArchive: true
