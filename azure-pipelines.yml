@@ -79,4 +79,4 @@ stages:
               ansibleInterface: 'agentMachine'
               playbookPathOnAgentMachine: '$(PlaybookPath)'
               inventoriesAgentMachine: 'file'
-              inventoryFileOnAgentMachine: '$(StageInentoryPath)'
+              inventoryFileOnAgentMachine: '/inventories/stage'
