@@ -31,7 +31,6 @@ stages:
       inputs:
         rootFolderOrFile: '$(build.sourcesdirectory)'
         includeRootFolder: true
-        publishLocation: BuildArtifacts
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/bootcamp.zip'
         replaceExistingArchive: true
@@ -42,6 +41,7 @@ stages:
       inputs:
         pathtoPublish: '$(Build.ArtifactStagingDirectory)/bootcamp.zip' 
         artifactName: 'bootcamp-app'
+        publishLocation: BuildArtifacts
       displayName: 'Publish Artifact'
       
     
