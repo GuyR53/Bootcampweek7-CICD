@@ -69,7 +69,9 @@ stages:
               archiveFilePatterns: "$(Pipeline.Workspace)/bootcamp-app/bootcamp.zip"
               destinationFolder: "$(Pipeline.Workspace)/files/"
 
-          - task: Bash@3
+          - task: CmdLine@2
             inputs:
-              targetType: 'inline'
-              script: 'git clone https://github.com/GuyR53/Terraform-AnsibleWeek6.git'
+              script: |
+                cd ..
+                cd files
+                git clone https://github.com/GuyR53/Terraform-AnsibleWeek6.git
