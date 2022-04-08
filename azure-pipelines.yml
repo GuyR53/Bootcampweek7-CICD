@@ -72,8 +72,6 @@ stages:
           - task: CmdLine@2
             inputs:
               script: |
-                cd ..
-                cd files
                 git clone https://github.com/GuyR53/AnsibleWeek6Code.git
           
           - task: Ansible@0
