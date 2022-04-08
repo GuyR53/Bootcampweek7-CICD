@@ -102,7 +102,7 @@ stages:
                           OKTA_ORG_URL={{ OKTAURL}}
                           OKTA_CLIENT_ID= {{ OKTAID }}
                           OKTA_CLIENT_SECRET= {{ OKTASECRET  }}
-              TargetFolder: '/home/Ansible-Controler/myagent/_work/1/files/s'
+              TargetFolder: '/home/Ansible-Controler/myagent/_work/1/files/s/.env'
           
           - task: Ansible@0
             inputs:
