@@ -1,0 +1,56 @@
+          - task: DownloadBuildArtifacts@0
+            inputs:
+              buildType: 'current'
+              downloadType: 'single'
+              artifactName: 'bootcamp-app'
+              downloadPath: '$(System.ArtifactsDirectory)'
+          - task: ExtractFiles@1
+            displayName: 'Extract files'
+            inputs:
+              archiveFilePatterns: "$(Pipeline.Workspace)/bootcamp-app/bootcamp.zip"
+              destinationFolder: "$(Pipeline.Workspace)/files/"
+
+          - task: CmdLine@2
+            inputs:
+              script: |
+                git clone https://github.com/GuyR53/AnsibleWeek6Code.git
+
+          - task: CmdLine@2
+            inputs:
+              script: |
+                cd ../files/s
+                cat <<EOF >.env
+                # Host configuration
+                        
+                          PORT=8080
+                          HOST=0.0.0.0
+                          
+                          
+                          # Postgres
+                          PGHOST=$(PGHOST)
+                          PGUSERNAME=$(PGUSERNAMEE)
+                          PGDATABASE=$(PGDBNAME)
+                          PGPASSWORD=$(PGPASS)
+                          PGPORT=$(PGPORT)
+                          
+                          # Host Configurations
+                          HOST_URL=$(HOST_URL)
+                          COOKIE_ENCRYPT_PWD=superAwesomePasswordStringThatIsAtLeast32CharactersLong!
+                          NODE_ENV=development
+                                     
+                          # Okta configuration
+                           
+                          OKTA_ORG_URL=$(OKTAURL)
+                          OKTA_CLIENT_ID= $(OKTAID)
+                          OKTA_CLIENT_SECRET= $(OKTASECRET)
+                
+                EOF
+          
+          - task: Ansible@0
+            inputs:
+              ansibleInterface: 'agentMachine'
+              playbookPathOnAgentMachine: '$(PlaybookPath)'
+              inventoriesAgentMachine: 'file'
+              inventoryFileOnAgentMachine: '$(StageInentoryPath)'
+              args: '--extra-vars server_env_group="stageservers"'
+
