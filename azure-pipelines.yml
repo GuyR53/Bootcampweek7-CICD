@@ -6,7 +6,6 @@ trigger:
 - master
 variables:
 - group: Variables
-- group: .envStage
 stages:
 - stage: 'Build_Stage' #Stage name cannot have spaces
   displayName: 'Build' #Name displayed when viewing in Azure DevOps
@@ -48,6 +47,8 @@ stages:
 
 
 - stage: 'Staging' #Stage name cannot have spaces
+  variables:
+  - group: Variables
   displayName: 'Staging' #Name displayed when viewing in Azure DevOps
   dependsOn: ['Build_Stage'] #List of previous stages that must complete before this stage runs
   jobs:
