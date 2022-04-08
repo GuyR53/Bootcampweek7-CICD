@@ -80,6 +80,6 @@ stages:
               playbookPathOnAgentMachine: 'AnsibleWeek6Code/main_playbook.yml'
               inventoriesAgentMachine: 'file'
               inventoryFileOnAgentMachine: 'AnsibleWeek6Code/inventories/stage'
-              args: '--extra-vars server_env_group="stageservers"''
+              args: '--extra-vars server_env_group="stageservers"'
           
           
