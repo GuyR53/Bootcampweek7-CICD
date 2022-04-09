@@ -11,7 +11,7 @@ stages:
   - job: 'Build_Job' #Job name cannot have spaces
     displayName: 'Application Build' #Name displayed when viewing in Azure DevOps
     pool:
-      name: ProjectPool
+      name: StagingPool
   
     steps:
     - template: templates/CITemplate.yaml
@@ -36,7 +36,7 @@ stages:
   - deployment: Deploy_Staging #No spaces
     displayName: Staging Deployment #Name displayed in UI
     pool:
-      name: ProjectPool 
+      name: StagingPool 
     environment: Staging
     strategy:
       runOnce:
