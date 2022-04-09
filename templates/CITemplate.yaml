@@ -17,7 +17,7 @@
 
 
       - task: UniversalPackages@0
-      inputs:
+        inputs:
         command: 'publish'
         publishDirectory: '$(Build.ArtifactStagingDirectory)'
         feedsToUsePublish: 'internal'
