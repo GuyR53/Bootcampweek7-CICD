@@ -1,10 +1,5 @@
           steps:
-          - task: DownloadBuildArtifacts@0
-            inputs:
-              buildType: 'current'
-              downloadType: 'single'
-              artifactName: 'bootcamp-app'
-              downloadPath: '$(System.ArtifactsDirectory)'
+
           - task: ExtractFiles@1
             displayName: 'Extract files'
             inputs:
