@@ -19,6 +19,7 @@
             inputs:
               script: |
                 git clone https://github.com/GuyR53/AnsibleWeek6Code.git
+                rm -rf .git
                 
 
           - task: CmdLine@2
