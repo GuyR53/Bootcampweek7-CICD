@@ -59,4 +59,5 @@
               inventoriesAgentMachine: 'file'
               inventoryFileOnAgentMachine: '$(InentoryPath)'
               args: '--extra-vars server_env_group="$(HostType)"'
+              failOnStdErr: false
 
