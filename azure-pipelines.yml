@@ -5,10 +5,10 @@
 trigger:
 - master
 stages:
-- stage: 'Build_Stage' #Stage name cannot have spaces
+- stage: 'Build_Stage' 
   displayName: 'Build' #Name displayed when viewing in Azure DevOps
   jobs:
-  - job: 'Build_Job' #Job name cannot have spaces
+  - job: 'Build_Job' 
     displayName: 'Application Build' #Name displayed when viewing in Azure DevOps
     pool:
       name: StagingPool
@@ -19,13 +19,13 @@ stages:
     
 
 
-- stage: 'Staging' #Stage name cannot have spaces
+- stage: 'Staging' 
   variables:
   - group: envStage
   displayName: 'Staging' #Name displayed when viewing in Azure DevOps
   dependsOn: ['Build_Stage'] #List of previous stages that must complete before this stage runs
   jobs:
-  - deployment: Deploy_Staging #No spaces
+  - deployment: Deploy_Staging 
     displayName: Staging Deployment #Name displayed in UI
     pool:
       name: StagingPool 
@@ -38,16 +38,16 @@ stages:
 
 
           
-- stage: 'Production' #Stage name cannot have spaces
+- stage: 'Production' 
   variables:
   - group: envProd
   displayName: 'Production' #Name displayed when viewing in Azure DevOps
   dependsOn: ['Build_Stage', 'Staging'] #List of previous stages that must complete before this stage runs
   jobs:
-  - deployment: Deploy_Production #No spaces
+  - deployment: Deploy_Production 
     displayName: Production Deployment #Name displayed in UI
     pool:
-      name: ProductionPool #variable that was defined previously (not shown in this snippet)
+      name: ProductionPool 
     environment: Production
     strategy:
       runOnce:
