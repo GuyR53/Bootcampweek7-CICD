@@ -13,7 +13,7 @@
 
     - task: Npm@1
       inputs:
-        command: 'install'
+        command: 'ci'
         workingDir: '$(build.sourcesdirectory)'
       displayName: "install dependencies for the app"
 
