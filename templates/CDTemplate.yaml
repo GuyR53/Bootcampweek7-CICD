@@ -10,7 +10,6 @@
             displayName: "Downloading the package from azure artifacts"
               
           - task: ExtractFiles@1
-            displayName: 'Extract files'
             inputs:
               archiveFilePatterns: "$(Pipeline.Workspace)/bootcamp-app/bootcamp.zip"
               destinationFolder: "$(Pipeline.Workspace)/files/"
