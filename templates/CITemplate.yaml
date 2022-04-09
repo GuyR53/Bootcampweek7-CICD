@@ -14,7 +14,7 @@
     - task: Npm@1
       inputs:
         command: 'install'
-        workingDir: './'
+        workingDir: '$(build.sourcesdirectory)'
       displayName: "install dependencies for the app"
 
     - task: ArchiveFiles@2
