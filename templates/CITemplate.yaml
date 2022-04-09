@@ -1,4 +1,24 @@
+
+
+
+
     steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '14.x'
+      displayName: 'Install Node.js 14'
+
+
+      
+    - task: Npm@1
+      inputs:
+        command: 'install'
+        workingDir: '$(build.sourcesdirectory)'
+      displayName: "install dependencies for the app"
+
+
+
+
     - task: ArchiveFiles@2
       inputs:
         rootFolderOrFile: '$(build.sourcesdirectory)'
