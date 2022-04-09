@@ -10,17 +10,12 @@
 
 
 
-    - task: Npm@1
-      inputs:
-        command: 'install'
-        workingDir: '$(build.sourcesdirectory)'
-      displayName: "install dependencies for the app"
-
 
     - task: Npm@1
       inputs:
         command: 'install'
         workingDir: './'
+      displayName: "install dependencies for the app"
 
     - task: ArchiveFiles@2
       inputs:
