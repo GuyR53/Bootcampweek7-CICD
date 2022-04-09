@@ -34,6 +34,15 @@ stages:
       runOnce:
         deploy:
           steps:
+          - task: UniversalPackages@0
+            inputs:
+              command: 'download'
+              downloadDirectory: '$(System.ArtifactsDirectory)'
+              feedsToUse: 'internal'
+              vstsFeed: '40a8d693-43e7-4d3c-b58e-d3cae2291e12/be6112bc-799a-41e4-909b-500909a53470'
+              vstsFeedPackage: '4bb89539-7ba3-42e5-9f5c-b754ecf6e250'
+              vstsPackageVersion: 'latest'
+
           - template: templates/CDTemplate.yaml
 
 
