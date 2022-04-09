@@ -1,3 +1,25 @@
+# Goals:
+
+
+
+
+
+<img width="615" alt="Screen Shot 2022-04-09 at 18 57 37" src="https://user-images.githubusercontent.com/93793111/162582180-fe17cb3a-1d24-4279-b69e-03e77e7a7cd2.png">
+
+
+
+
+1. Create an Azure DevOps Organization.
+2. Create a CICD (yaml) using Azure Pipelines.
+3. CI pipeline should trigger automatically on every commit.
+4. Use Azure Artifacts to store your build Artifacts.
+5. Create a CD Job using Yaml job (yaml).
+6. Configure your CD stage to deploy to Staging using Continuous Deployment.
+7. Configure your CD stage to deploy to Production using Continuous Delivery.
+8. In case of making a change to the code and pushing it, it will be automatically deployed to the Staging environment.
+9. Deployment to production must consist of a manual approval.
+
+
 # Node.js Weight Tracker
 
 ![Demo](docs/build-weight-tracker-app-demo.gif)
