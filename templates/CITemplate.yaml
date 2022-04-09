@@ -9,7 +9,7 @@
       displayName: 'Install Node.js 14'
 
 
-      
+
     - task: Npm@1
       inputs:
         command: 'install'
@@ -17,7 +17,10 @@
       displayName: "install dependencies for the app"
 
 
-
+    - task: Npm@1
+      inputs:
+        command: 'install'
+        workingDir: './'
 
     - task: ArchiveFiles@2
       inputs:
