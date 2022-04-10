@@ -20,6 +20,22 @@
 9. Deployment to production must consist of a manual approval.
 
 
+# Variables for each environment:
+
+ Staging:
+
+<img width="988" alt="Screen Shot 2022-04-10 at 9 54 16" src="https://user-images.githubusercontent.com/93793111/162606324-c8f95b6c-626e-4616-b9e8-d995ff118c5d.png">
+
+ Production:
+
+<img width="988" alt="Screen Shot 2022-04-10 at 9 51 21" src="https://user-images.githubusercontent.com/93793111/162606337-eabc0b09-b288-45a3-8db2-8a1efa702306.png">
+
+# Results:
+
+<img width="806" alt="Screen Shot 2022-04-10 at 9 50 14" src="https://user-images.githubusercontent.com/93793111/162606377-78408704-7bd1-4c08-829e-a62977c8e1c6.png">
+
+
+
 # Node.js Weight Tracker
 
 ![Demo](docs/build-weight-tracker-app-demo.gif)
